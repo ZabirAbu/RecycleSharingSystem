@@ -1,4 +1,7 @@
 import '../CSS/Header.css';
+import homeIcon from '../Assets/home.png';
+import marketIcon from '../Assets/market.png';
+import loginIcon from '../Assets/person.png';
 
 import FormControl from '@mui/material/FormControl';
 import MenuItem from '@mui/material/MenuItem';
@@ -31,14 +34,14 @@ function Header() {
                 LOGO
             </div>
             <div className='nav'>
-                <a className='nav-btn'>
-                    Home
+                <a className='nav-btn' href='/home'>
+                    <img src={homeIcon} /> 
                 </a>
-                <a className='nav-btn'>
-                    Market
+                <a className='nav-btn' href='/market'>
+                    <img src={marketIcon} />
                 </a>
-                <a className='nav-btn'>
-                    Login
+                <a className='nav-btn login' href='/login'>
+                    <img src={loginIcon} />
                 </a>
                 <FormControl sx={{ m: 1, minWidth: 120 }}>
                     <Select
