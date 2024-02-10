@@ -3,7 +3,6 @@ import '../CSS/Header.css';
 
 function Header() {
     return (
-
         <div className='Header'>
             <div className='logo'>
                 LOGO

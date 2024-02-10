@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from './Pages/Home';
 import Items  from './Pages/Items';
 
-function App() {
-  return (
+function App(props) {
+  import(`./CSS/${props.theme}.css`);
 
+  return (
     <Router>
       <Routes>
         

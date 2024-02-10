@@ -1,5 +1,4 @@
 import '../CSS/Home.css';
-import '../CSS/index.css';
 import FrontCover from '../Assets/front-cover.png'
 
 import Header from '../Components/Header';
