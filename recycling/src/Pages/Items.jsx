@@ -1,6 +1,5 @@
 import React from 'react';
 import '../CSS/Home.css';
-import '../CSS/index.css';
 
 import Header from '../Components/Header';
 import Button from '@mui/material/Button';

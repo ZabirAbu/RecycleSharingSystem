@@ -5,9 +5,10 @@ import Items  from './Pages/Items';
 import Market  from './Pages/Market';
 
 
-function App() {
-  return (
+function App(props) {
+  import(`./CSS/${props.theme}.css`);
 
+  return (
     <Router>
       <Routes>
         

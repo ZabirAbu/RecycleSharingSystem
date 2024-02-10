@@ -6,7 +6,6 @@ import loginIcon from '../Assets/person.png';
 
 function Header() {
     return (
-
         <div className='Header'>
             <div className='logo'>
                 LOGO
