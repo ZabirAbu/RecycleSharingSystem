@@ -4,6 +4,7 @@
     border-bottom: 1px solid var(--highlight);
 
     background: var(--secondary-color);
+    color: var(--white);
 
     padding: 0 15%;
     box-sizing: border-box;
@@ -37,4 +38,9 @@
 .nav-btn:hover{
     background-color: var(--highlight);
     border: 1px solid var(--green-light)
+}
+
+.MuiInputBase-root, .MuiMenuItem-root, .MuiPaper-root{
+    color: var(--white) !important;
+    background-color: var(--primary-color) !important;
 }
