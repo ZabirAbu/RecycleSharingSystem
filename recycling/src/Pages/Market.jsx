@@ -1,30 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../Components/Header';
 import searchIcon from '../Assets/search.png';
 import '../CSS/Market.css';
 import '../CSS/index.css';
+import MarketItem from '../Components/MarketItem';
 
 function Market() {
   // Initialize state for market items and search query
   const [marketItems, setMarketItems] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Function to handle search input change
+  // useEffect to fetch market items from API
+  useEffect(() => {
+    // Fetch market items from your Express API
+    const fetchMarketItems = async () => {
+      try {
+        const response = await fetch('http://localhost:8000/getItems');
+        const data = await response.json();
+        setMarketItems(data.data);
+      } catch (error) {
+        console.error('Error fetching market items:', error);
+      }
+    };
+
+    fetchMarketItems();
+  }, []);
+
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
   };
 
-  // Function to filter market items based on search query
   const filteredMarketItems = marketItems.filter(item =>
     item.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
 
   return (
     <div>
       <Header />
       <div class="container">
 
-      <div class="sidebar">
+        <div class="sidebar">
           <div className='sidebar-section'>
             <text>Filter by</text>
             <div className='box'>
@@ -60,21 +76,16 @@ function Market() {
 
           {/* Main section with market boxes */}
           <div className="main">
-            {/* Render market boxes */}
+            {/* Render market items using MarketItem component */}
             {filteredMarketItems.map((item, index) => (
-              <div className='market-box' key={index}>
-                <div className='mkb-img'>
-                  <img src={item.image} alt={item.title} />
-                </div>
-                <div className='mkb-info'>
-                  <div className='mkb-title'>
-                    {item.title}
-                  </div>
-                  <div className='mkb-desc'>
-                    {item.caption}
-                  </div>
-                </div>
-              </div>
+              <MarketItem
+                key={item.id}
+                id={item.id} // Make sure to pass the id prop
+                title={item.title}
+                content={item.content}
+                image={item.image}
+              />
+
             ))}
           </div>
         </div>

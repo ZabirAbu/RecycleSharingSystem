@@ -3,14 +3,24 @@ import '../CSS/index.css';
 
 
 
-function MarketItem({title, content, image}) {
+function MarketItem({ id, title, content, image }) {
 
   return (
-
-    <div className='Home'>
-
-    </div>
-
+    <a className='market-box' onClick={() => {
+      window.location.href = `/item?id=${id}`;
+    }}>
+      <div className='mkb-img'>
+        <img src={image} alt={title} />
+      </div>
+      <div className='mkb-info'>
+        <div className='mkb-title'>
+          {title}
+        </div>
+        <div className='mkb-desc'>
+          {content}
+        </div>
+      </div>
+    </a>
   );
 }
 

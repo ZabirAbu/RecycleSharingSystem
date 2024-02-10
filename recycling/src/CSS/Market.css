@@ -136,7 +136,8 @@
     background-color:  var(--primary-color);
     max-height: 300px;
     border-radius: 10px;
-    border: 1px solid var(--highlight)
+    border: 1px solid var(--highlight);
+    cursor: pointer;
 }
 
 .mkb-img{
