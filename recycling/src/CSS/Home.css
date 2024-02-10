@@ -1,0 +1,43 @@
+.Home {
+    margin: 0;
+    background-color: var(--primary-color);
+    height: calc(100vh - var(--header-height));
+    width: 100%;
+}
+
+.Home-inner {
+    height: 100%;
+    padding: 0 15%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+.Home-image {
+    width: 50%;
+}
+
+.Home-image img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.Home-text {
+    text-align: center;
+}
+
+.Home-text h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 48px;
+}
+
+.Home-text text {
+    margin: 0;
+    font-weight: 400;
+    font-size: 24px;
+}
