@@ -20,11 +20,13 @@ function Header() {
             root.style.setProperty("--secondary-color", "#1c1d22");
             root.style.setProperty("--highlight", "#2c2d30");
             root.style.setProperty("--white", "#fefefe");
+            root.style.setProperty("--icon-filter", "invert(1)");
         } else {
             root.style.setProperty("--primary-color", "#eeeeee");
             root.style.setProperty("--secondary-color", "#cccccc");
             root.style.setProperty("--highlight", "#edeae7");
             root.style.setProperty("--white", "#010101");
+            root.style.setProperty("--icon-filter", "invert(0)");
         }
     };
     

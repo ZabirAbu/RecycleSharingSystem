@@ -50,6 +50,7 @@
 
 .nav-btn img{
     width: 20px;
+    filter: var(--icon-filter);
 }
 
 .login{
