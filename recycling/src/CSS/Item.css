@@ -1,8 +1,25 @@
 .Item {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
 }
 
 .itemdetail-info {
     justify-content: flex-start;
+}
+
+.itemdetail-content {
+    padding-bottom: 3rem;
+}
+
+.add-to-cart-button {
+    padding: 0.5rem;
+    border-radius: 20px;
+    border-color: var(--green-light);
+}
+
+.delete-cart-button {
+    padding: 0.5rem;
+    border-radius: 20px;
+    border-color: var(--green-light);
 }
