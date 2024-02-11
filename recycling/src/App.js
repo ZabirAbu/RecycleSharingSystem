@@ -4,6 +4,8 @@ import Home from './Pages/Home';
 import Item  from './Pages/Item';
 import Market  from './Pages/Market';
 import Profile  from './Pages/Profile';
+import Checkout  from './Pages/Checkout';
+
 
 
 
@@ -14,6 +16,8 @@ function App() {
         <Route path="/home" element={<Navigate to="/" />} />
         <Route path="/" element={<Home />} />
         <Route path="/item" element={<Item />} />
+        <Route path="/checkout" element={<Checkout />} />
+
         {/* <Route path="/item/:id" element={Item} /> */}
 
         <Route path="/market" element={<Market />} />
