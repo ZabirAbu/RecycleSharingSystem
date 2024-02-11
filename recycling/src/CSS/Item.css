@@ -21,9 +21,6 @@
     cursor: pointer;
 }
 
-.itemdetail-image img {
-    border: solid 1px var(--green-light);
-}
 
 .itemdetail-content img {
     width: 15px;
