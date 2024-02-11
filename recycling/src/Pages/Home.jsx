@@ -6,9 +6,9 @@ import Header from '../Components/Header';
 
 function Home() {
   return (
-    <div className='Home'>
+    <div className='Home '>
         <Header />
-        <div className='Home-inner'>
+        <div className='Home-inner '>
           <div className='Home-image'>
           </div>
           <div className='Home-text'>
@@ -20,6 +20,8 @@ function Home() {
               </text>
           </div>
         </div>
+        <div className='background'></div>
+
 
     </div>
 
