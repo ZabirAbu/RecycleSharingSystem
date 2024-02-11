@@ -45,7 +45,7 @@
     font-weight: 600 ;
     background-color: var(--secondary-color);
     transition: background-color 0.4s ease, border 0.4s ease;
-    border: 1px solid transparent;
+    border: 1px solid var(--green-light);
 }
 
 .nav-btn:hover{
