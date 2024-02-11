@@ -7,10 +7,11 @@ import logo from '../Assets/icon.png'
 import FormControl from '@mui/material/FormControl';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function Header() {
     const [theme, setTheme] = useState('darkmode');
+   
 
     const handleChange = (event) => {
         setTheme(event.target.value);
@@ -23,19 +24,20 @@ function Header() {
             root.style.setProperty("--white", "#fefefe");
             root.style.setProperty("--icon-filter", "invert(1)");
         } else {
-            root.style.setProperty("--primary-color", "#eeeeee");
+            root.style.setProperty("--primary-color", "#f5fff5");
             root.style.setProperty("--secondary-color", "#cccccc");
             root.style.setProperty("--highlight", "#edeae7");
             root.style.setProperty("--white", "#010101");
             root.style.setProperty("--icon-filter", "invert(0)");
         }
     };
+
     
     return (
         <div className='Header'>
-            <div className='logo'>
+            <a className='logo' href='/home'>
                 <img src={logo} />
-            </div>
+            </a>
             <div className='nav'>
                 <a className='nav-btn' href='/home'>
                 <img src={homeIcon} /> 
@@ -43,9 +45,10 @@ function Header() {
                 <a className='nav-btn' href='/market'>
                     <img src={marketIcon} />
                 </a>
-                <a className='nav-btn' href='/login'>
+                <a className='nav-btn' href='/profile'>
                     <img src={loginIcon} />
                 </a>
+{/*                 
                 <FormControl sx={{ m: 1, minWidth: 120 }}>
                     <Select
                     value={theme}
@@ -56,7 +59,7 @@ function Header() {
                     <MenuItem value={'darkmode'}>Dark Mode</MenuItem>
                     <MenuItem value={'lightmode'}>Light Mode</MenuItem>
                     </Select>
-                </FormControl>
+                </FormControl> */}
             </div>
 
         </div>

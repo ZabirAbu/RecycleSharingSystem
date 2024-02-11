@@ -6,22 +6,20 @@ import '../CSS/index.css';
 import MarketItem from '../Components/MarketItem';
 
 function Market() {
-  // Initialize state for market items and search query
   const [marketItems, setMarketItems] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
 
-  // useEffect to fetch market items from API
   useEffect(() => {
-    // Fetch market items from your Express API
     const fetchMarketItems = async () => {
       try {
-        // const response = await fetch('http://localhost:8000/getItems');
         const data = {
           data: [
-            { id: 1, title: 'Item 1', content: "Item 1", image : "https://i.etsystatic.com/20931094/r/il/9bf93f/4746438886/il_fullxfull.4746438886_3mp6.jpg"},
-            { id: 2, title: 'Item 2', content: "Item 1", image : "https://i.etsystatic.com/20931094/r/il/9bf93f/4746438886/il_fullxfull.4746438886_3mp6.jpg" },
-            { id: 3, title: 'Item 3', content: "Item 1", image : "https://i.etsystatic.com/20931094/r/il/9bf93f/4746438886/il_fullxfull.4746438886_3mp6.jpg" }
-          ]
+            { id: 1, title: 'Computer Science Books', content: "I am listing my old school books as I am graduating this year. ", image: "https://macmillan-dam.captureweb.co.uk/cdn/macmillan/previews/439664/d2600cec4c0f09bf8e6187a83a066343/0/14665546cf5662d409143d004ffc0c54/131898933.jpg" },
+            { id: 2, title: 'Vintage Clothing', content: "I don't have enough room to move these clothes to my new room next year.", image: "https://www.thoughtco.com/thmb/ctxxtfGGeK5f_-S3f8J-jbY-Gp8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/close-up-of-clothes-hanging-in-row-739240657-5a78b11f8e1b6e003715c0ec.jpg" },
+            { id: 3, title: 'Toaster', content: "We bought a toaster for our student house at the start, now we don't need it.", image: "https://www.charlies.co.uk/media/catalog/product/cache/a017d3c1755e7999c1cee32d3cb3285b/s/a/salter-ombre-toaster-grey-1.jpg" },
+            { id: 4, title: 'Microwave', content: 'Bought a microwave for the house and now we do not need it.', image: 'https://res.cloudinary.com/sharp-consumer-eu/image/fetch/w_3000,f_auto/https://s3.infra.brandquad.io/accounts-media/SHRP/DAM/origin/16c46540-bbee-11ec-b26a-42151ba980ed.jpg'},
+            { id: 5, title: 'School Bag', content: "Don't need my bag anymore.", image: 'https://m.media-amazon.com/images/I/81Ippl4VoqL._AC_SL1500_.jpg'}
+        ]
         }
         setMarketItems(data.data);
       } catch (error) {
@@ -44,16 +42,15 @@ function Market() {
   return (
     <div>
       <Header />
-      <div class="container">
+      
+      <div class="container"><h1>Marketplace</h1>
+        <div className='market'>
 
         <div class="sidebar">
           <div className='sidebar-section'>
             <text>Filter by</text>
             <div className='box'>
-              Location
-            </div>
-            <div className='box'>
-              Weight
+              Points
             </div>
           </div>
           <div className='sidebar-section'>
@@ -95,6 +92,7 @@ function Market() {
             ))}
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

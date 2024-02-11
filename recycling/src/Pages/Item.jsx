@@ -13,7 +13,7 @@ function Item() {
         <div className='Item-container'>
             <div className='Item'>
                 <div className='item-image'>
-
+                    
                 </div>
                 <div className='item-info'>
                     <div className='item-title'>

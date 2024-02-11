@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import Home from './Pages/Home';
 import Item  from './Pages/Item';
 import Market  from './Pages/Market';
+import Profile  from './Pages/Profile';
+
 
 
 function App() {
@@ -13,6 +15,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/item" element={<Item />} />
         <Route path="/market" element={<Market />} />
+        <Route path="/profile" element={<Profile />} />
+
         {/* <Route path="/*" element={<Navigate to="/" />} /> */}
       </Routes>
     </Router>

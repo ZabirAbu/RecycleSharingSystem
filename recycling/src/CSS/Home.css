@@ -28,16 +28,17 @@
 
 .Home-text {
     text-align: center;
+    /* width: 40%; */
 }
 
 .Home-text h1 {
     margin: 0;
     font-weight: 700;
-    font-size: 48px;
+    font-size: 58px;
 }
 
 .Home-text text {
     margin: 0;
     font-weight: 300;
-    font-size: 16px;
+    font-size: 14px;
 }

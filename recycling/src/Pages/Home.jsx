@@ -14,7 +14,7 @@ function Home() {
           </div>
           <div className='Home-text'>
               <h1>
-                Student Swap
+                Stuff Swap
               </h1>
               <text>
               Swap your items with fellow students, in exchange for in-app points.

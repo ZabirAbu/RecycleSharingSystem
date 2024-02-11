@@ -15,8 +15,10 @@
     box-shadow: 0 2px 24px rgba(0, 0, 0, 0.1);
 }
 
+
 .logo img{
-    width: 40px;
+    width: 30px;
+    filter: var(--icon-filter);
 }
 
 .nav{
@@ -48,7 +50,7 @@
 
 .nav-btn:hover{
     background-color: var(--highlight);
-    border: 1px solid var(--green-light)
+    border: 1px solid var(--highlight);
 }
 
 .nav-btn img{
@@ -64,4 +66,10 @@
 .MuiInputBase-root, .MuiMenuItem-root, .MuiPaper-root{
     color: var(--white) !important;
     background-color: var(--primary-color) !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+.MuiInputBase-root:active{
+    outline: none !important;
+
 }
