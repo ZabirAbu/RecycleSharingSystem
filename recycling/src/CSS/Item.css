@@ -1,0 +1,8 @@
+.Item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.itemdetail-info {
+    justify-content: flex-start;
+}
