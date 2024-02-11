@@ -3,6 +3,8 @@ import homeIcon from '../Assets/home.png';
 import marketIcon from '../Assets/market.png';
 import loginIcon from '../Assets/person.png';
 import logo from '../Assets/icon.png'
+import cart from '../Assets/cart.png'
+
 
 import FormControl from '@mui/material/FormControl';
 import MenuItem from '@mui/material/MenuItem';
@@ -11,6 +13,8 @@ import { useEffect, useState } from 'react';
 
 function Header() {
     const [theme, setTheme] = useState('darkmode');
+    const [cartLength, setCartLength] = useState(); // State to manage cart items
+
    
 
     const handleChange = (event) => {
@@ -32,6 +36,14 @@ function Header() {
         }
     };
 
+    useEffect(() => {
+        const storedCart = localStorage.getItem('cart');
+        if (storedCart) {
+            console.log(JSON.parse(storedCart))
+            setCartLength(JSON.parse(storedCart).length);
+        }
+    }, []);
+
     
     return (
         <div className='Header'>
@@ -47,6 +59,9 @@ function Header() {
                 </a>
                 <a className='nav-btn' href='/profile'>
                     <img src={loginIcon} />
+                </a>
+                <a className='nav-btn' href='/checkout'>
+                    <img src={cart} /> {cartLength}
                 </a>
 {/*                 
                 <FormControl sx={{ m: 1, minWidth: 120 }}>
