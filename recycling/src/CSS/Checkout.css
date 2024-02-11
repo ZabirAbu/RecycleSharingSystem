@@ -1,4 +1,17 @@
 .Checkout{
     width: 100%;
     height: calc(100vh - var(--header-height));
+    text-align: center;
+    margin: 0 auto; /* This centers the container horizontally */
+    max-width: 600px;
 }
+
+
+.cart-items {
+    margin-bottom: 20px;
+  }
+  
+  .cart-items ul {
+    list-style-type: none; /* Remove bullet points from the list */
+    padding: 0; /* Remove default padding */
+  }
