@@ -36,18 +36,19 @@ function Item() {
         const searchParams = new URLSearchParams(window.location.search);
         const itemId = searchParams.get('id');
         if (!cart.includes(itemId)) {
-            toast.success("Added to cart.", {duration : 3000 })
             console.log(itemId)
             setCart([...cart, itemId]);
             localStorage.setItem('cart', JSON.stringify([...cart, itemId]));
+            window.location.reload();
+        } else {
+            toast.error("Already in cart.", {duration : 3000})
         }
     };
 
     const deleteCart = () => {
         localStorage.removeItem('cart');
         toast.error("Cart deleted.", {duration : 3000 })
-
-
+        window.location.reload();
     };
 
     useEffect(() => {
@@ -90,7 +91,7 @@ function Item() {
                     </div>
                 </div>
             </div>
-            {/* <div><Toaster position='bottom-left' reverseOrder={true} /></div> */}
+            <div><Toaster position='bottom-left' reverseOrder={true} /></div>
         </div>
     );
 }

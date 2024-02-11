@@ -3,6 +3,9 @@
     grid-template-columns: 1fr 1fr;
     grid-gap: 50px;
     margin-top: 3rem;
+    border: 1px solid var(--highlight);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.216);
 }
 
 .itemdetail-image img{
@@ -11,7 +14,7 @@
 }
 
 .itemdetail-info {
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
     padding: 10px;
     box-sizing: border-box;
 }

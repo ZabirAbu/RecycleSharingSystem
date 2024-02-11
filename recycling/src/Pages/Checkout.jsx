@@ -30,8 +30,7 @@ function Checkout() {
 
     const clearCart = () => {
         localStorage.removeItem('cart');
-        window.location.reload()
-        // After removing from localStorage, reset the cartItems array to empty
+        window.location.reload();
         cartItems = [];
     };
 

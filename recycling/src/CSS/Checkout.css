@@ -30,6 +30,11 @@
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.09);
     max-height: 250px;
     border-color: var(--green-light);
+    transition: box-shadow 0.4s ease;
+}
+
+.basket-box:hover{
+  box-shadow: 0px 0px 20px hsla(123, 55%, 28%, 0.279);
 }
 
 .bkb-img{
