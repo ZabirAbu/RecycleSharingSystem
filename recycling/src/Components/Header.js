@@ -2,17 +2,18 @@ import '../CSS/Header.css';
 import homeIcon from '../Assets/home.png';
 import marketIcon from '../Assets/market.png';
 import loginIcon from '../Assets/person.png';
+import logo from '../Assets/icon.png'
 
 
 function Header() {
     return (
         <div className='Header'>
             <div className='logo'>
-                LOGO
+                <img src={logo} />
             </div>
             <div className='nav'>
                 <a className='nav-btn' href='/home'>
-                    <img src={homeIcon} /> 
+                <img src="https://img.icons8.com/fluency-systems-filled/48/ffffff/home.png" alt="home"/> 
                 </a>
                 <a className='nav-btn' href='/market'>
                     <img src={marketIcon} />
