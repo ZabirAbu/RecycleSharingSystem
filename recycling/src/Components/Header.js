@@ -43,7 +43,7 @@ function Header() {
                 <a className='nav-btn' href='/market'>
                     <img src={marketIcon} />
                 </a>
-                <a className='nav-btn login' href='/login'>
+                <a className='nav-btn' href='/login'>
                     <img src={loginIcon} />
                 </a>
                 <FormControl sx={{ m: 1, minWidth: 120 }}>

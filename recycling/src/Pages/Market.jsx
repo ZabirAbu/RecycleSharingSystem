@@ -16,7 +16,13 @@ function Market() {
     const fetchMarketItems = async () => {
       try {
         const response = await fetch('http://localhost:8000/getItems');
-        const data = await response.json();
+        const data = {
+          data: [
+            { id: 1, title: 'Item 1', content: "Item 1", image : "https://i.etsystatic.com/20931094/r/il/9bf93f/4746438886/il_fullxfull.4746438886_3mp6.jpg"},
+            { id: 2, title: 'Item 2', content: "Item 1", image : "https://i.etsystatic.com/20931094/r/il/9bf93f/4746438886/il_fullxfull.4746438886_3mp6.jpg" },
+            { id: 3, title: 'Item 3', content: "Item 1", image : "https://i.etsystatic.com/20931094/r/il/9bf93f/4746438886/il_fullxfull.4746438886_3mp6.jpg" }
+          ]
+        }
         setMarketItems(data.data);
       } catch (error) {
         console.error('Error fetching market items:', error);
