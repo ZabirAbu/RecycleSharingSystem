@@ -15,7 +15,7 @@ function Market() {
     // Fetch market items from your Express API
     const fetchMarketItems = async () => {
       try {
-        const response = await fetch('http://localhost:8000/getItems');
+        // const response = await fetch('http://localhost:8000/getItems');
         const data = {
           data: [
             { id: 1, title: 'Item 1', content: "Item 1", image : "https://i.etsystatic.com/20931094/r/il/9bf93f/4746438886/il_fullxfull.4746438886_3mp6.jpg"},
