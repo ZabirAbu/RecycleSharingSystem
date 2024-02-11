@@ -2,6 +2,8 @@ import React from 'react';
 import '../CSS/Checkout.css';
 import '../CSS/Home.css';
 import Header from '../Components/Header';
+import BasketItem from '../Components/BasketItem';
+import pointIcon from '../Assets/point.png';
 
 function Checkout() {
   // Sample data for items in the cart
@@ -41,20 +43,19 @@ function Checkout() {
         
         <div className="cart-items">
           <h3>Items in Cart:</h3>
-          <ul>
-            {cartItems.map(item => (
-              <li key={item.id}>
-                {item.name} - {item.points} points
-              </li>
-            ))}
-          </ul>
-          <p>Total Points: {calculateTotalPoints()}</p>
+          {cartItems.map(item => (
+            <BasketItem id={item.id} title={item.title} content={item.content}
+             image={item.image} points={item.points} />
+          ))}
+          <span className='total-points'>
+            Total:  {calculateTotalPoints()}<img src={pointIcon} />
+          </span>
         </div>
 
         <form>
           {/* Add more form fields as needed */}
           
-          <button type="button" onClick={handleConfirm}>Confirm</button>
+          <button type="button" onClick={handleConfirm} className="cart-confirm-button">Confirm</button>
         </form>
       </div>
     </div>

@@ -6,12 +6,114 @@
     max-width: 600px;
 }
 
-
 .cart-items {
     margin-bottom: 20px;
-  }
-  
-  .cart-items ul {
-    list-style-type: none; /* Remove bullet points from the list */
-    padding: 0; /* Remove default padding */
-  }
+    background-color: var(--secondary-color);
+
+    flex: 1;
+    padding: 10px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr; /* Three divs per line */
+    grid-auto-rows: minmax(80px, auto); /* Auto-sized rows */
+    gap: 10px;
+    overflow: auto;
+}
+
+.basket-box{
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color:  var(--primary-color);
+    border-radius: 10px;
+    border: 1px solid var(--highlight);
+    cursor: pointer;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.09);
+    max-height: 250px;
+    border-color: var(--green-light);
+}
+
+.bkb-img{
+  float: left;
+  height: 80px;
+  width: 80px;
+  overflow: hidden;
+  position: relative;
+  margin: 1rem;
+}
+
+.bkb-img img {
+  max-height: 80px;
+  max-width: 80px;
+  display: block;
+  margin: 0 auto;
+}
+
+.bkb-info {
+  float: left;
+  width: calc(100% - 80px - 4rem);
+  padding: 1rem;
+  text-align: left;
+}
+
+.bkb-i-top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bkb-title{
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.bkb-desc{
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.bkb-points{
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bkb-points img{
+  width: 25px;
+}
+
+.total-points {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.total-points img{
+  width: 25px;
+}
+
+.cart-confirm-button {
+  font-size: 24px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  width: 400px;
+  padding: 5px 15px;
+  box-sizing: border-box;
+
+  border: 1px solid var(--green-light);
+  transition: border 0.4s ease;
+  border-radius: 10px;
+}
+
+.cart-confirm-button:hover{
+  border: 1px solid var(--green-light);
+}
+
+.cart-confirm-button:hover {
+  background-color: var(--highlight);
+}
+
+.cart-confirm-button:active {
+  background-color: var(--grey);
+}
