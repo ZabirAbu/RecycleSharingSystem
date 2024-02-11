@@ -63,18 +63,6 @@ function Header() {
                 <a className='nav-btn' href='/checkout'>
                     <img src={cart} /> {cartLength}
                 </a>
-{/*                 
-                <FormControl sx={{ m: 1, minWidth: 120 }}>
-                    <Select
-                    value={theme}
-                    onChange={handleChange}
-                    displayEmpty
-                    inputProps={{ 'aria-label': 'Without label' }}
-                    >
-                    <MenuItem value={'darkmode'}>Dark Mode</MenuItem>
-                    <MenuItem value={'lightmode'}>Light Mode</MenuItem>
-                    </Select>
-                </FormControl> */}
             </div>
 
         </div>

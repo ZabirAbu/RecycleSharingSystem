@@ -10,11 +10,10 @@ function Home() {
         <Header />
         <div className='Home-inner'>
           <div className='Home-image'>
-            {/* <img src={FrontCover} /> */}
           </div>
           <div className='Home-text'>
               <h1>
-                Stuff Swap
+                Swap Stuff
               </h1>
               <text>
               Swap your items with fellow students, in exchange for in-app points.
