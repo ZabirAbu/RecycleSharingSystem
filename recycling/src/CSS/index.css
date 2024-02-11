@@ -37,3 +37,8 @@ body{
 ::-webkit-scrollbar-track {
   background-color: #fff; /* color of the track */
 }
+
+
+hr {
+  margin: 30px 0;
+}

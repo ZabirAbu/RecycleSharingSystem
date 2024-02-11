@@ -203,7 +203,7 @@
 .Item-container{
     width: 100%;
 
-    padding: 0 15%;
+    padding: 0 15% 30px 15%;
     box-sizing: border-box;
 }
 

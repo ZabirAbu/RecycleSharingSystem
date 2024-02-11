@@ -8,18 +8,21 @@ import '../CSS/Item.css';
 import pointsIcon from '../Assets/point.png';
 import toast, { Toaster } from 'react-hot-toast';
 
+import Recomendation from '../Components/Recomendation';
+
 
 
 function Item() {
     const [searchParams, setSearchParams] = useSearchParams();
     const id = parseInt(searchParams.get('id'));
-    
+
+
     const data = [
         { id: 1, points: 36, tag: "study", title: 'Computer Science Books', content: "I am listing my old school books as I am graduating this year. ", image: "https://macmillan-dam.captureweb.co.uk/cdn/macmillan/previews/439664/d2600cec4c0f09bf8e6187a83a066343/0/14665546cf5662d409143d004ffc0c54/131898933.jpg" },
         { id: 2, points: 14, tag: "clothing", title: 'Vintage Clothing', content: "I don't have enough room to move these clothes to my new room next year.", image: "https://www.thoughtco.com/thmb/ctxxtfGGeK5f_-S3f8J-jbY-Gp8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/close-up-of-clothes-hanging-in-row-739240657-5a78b11f8e1b6e003715c0ec.jpg" },
         { id: 3, points: 43, tag: "electrical", title: 'Toaster', content: "We bought a toaster for our student house at the start, now we don't need it.", image: "https://www.charlies.co.uk/media/catalog/product/cache/a017d3c1755e7999c1cee32d3cb3285b/s/a/salter-ombre-toaster-grey-1.jpg" },
-        { id: 4, points: 42, tag: "electrical", title: 'Microwave', content: 'Bought a microwave for the house and now we do not need it.', image: 'https://res.cloudinary.com/sharp-consumer-eu/image/fetch/w_3000,f_auto/https://s3.infra.brandquad.io/accounts-media/SHRP/DAM/origin/16c46540-bbee-11ec-b26a-42151ba980ed.jpg'},
-        { id: 5, points: 10, tag: "clothing", title: 'School Bag', content: "Don't need my bag anymore.", image: 'https://m.media-amazon.com/images/I/81Ippl4VoqL._AC_SL1500_.jpg'}
+        { id: 4, points: 42, tag: "electrical", title: 'Microwave', content: 'Bought a microwave for the house and now we do not need it.', image: 'https://res.cloudinary.com/sharp-consumer-eu/image/fetch/w_3000,f_auto/https://s3.infra.brandquad.io/accounts-media/SHRP/DAM/origin/16c46540-bbee-11ec-b26a-42151ba980ed.jpg' },
+        { id: 5, points: 10, tag: "clothing", title: 'School Bag', content: "Don't need my bag anymore.", image: 'https://m.media-amazon.com/images/I/81Ippl4VoqL._AC_SL1500_.jpg' }
     ];
 
     const item = data.find((item) => item.id == id);
@@ -28,10 +31,8 @@ function Item() {
     const image = item.image;
     const points = item.points;
 
-    // const { id: itemId } = useParams(); // Extract the 'id' parameter from the URL
-    const [cart, setCart] = useState([]); // State to manage cart items
+    const [cart, setCart] = useState([]);
 
-    // Function to add item to cart
     const addToCart = () => {
         const searchParams = new URLSearchParams(window.location.search);
         const itemId = searchParams.get('id');
@@ -41,13 +42,13 @@ function Item() {
             localStorage.setItem('cart', JSON.stringify([...cart, itemId]));
             window.location.reload();
         } else {
-            toast.error("Already in cart.", {duration : 3000})
+            toast.error("Already in cart.", { duration: 3000 })
         }
     };
 
     const deleteCart = () => {
         localStorage.removeItem('cart');
-        toast.error("Cart deleted.", {duration : 3000 })
+        toast.error("Cart deleted.", { duration: 3000 })
         window.location.reload();
     };
 
@@ -76,7 +77,7 @@ function Item() {
                             <div className='itemdetail-content'>
                                 {content}
                             </div>
-    
+
                         </div>
                         <div className='itmd-desc'>
                             <h1>Points</h1>
@@ -90,6 +91,8 @@ function Item() {
                         </div>
                     </div>
                 </div>
+                {/* <hr /> */}
+                <Recomendation currentImageId={id} />
             </div>
             <div><Toaster position='bottom-left' reverseOrder={true} /></div>
         </div>
