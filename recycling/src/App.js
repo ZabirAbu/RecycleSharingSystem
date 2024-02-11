@@ -12,7 +12,6 @@ function App() {
       <Routes> 
         <Route path="/home" element={<Navigate to="/" />} />
         <Route path="/" element={<Home />} />
-        <Route path="/items" element={<Items />} />
         <Route path="/item" element={<Item />} />
         <Route path="/market" element={<Market />} />
         {/* <Route path="/*" element={<Navigate to="/" />} /> */}
