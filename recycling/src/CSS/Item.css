@@ -21,6 +21,10 @@
     cursor: pointer;
 }
 
+.itemdetail-image img {
+    border: solid 1px var(--green-light);
+}
+
 .itemdetail-content img {
     width: 15px;
 }
@@ -44,6 +48,14 @@
 .add-to-cart-button:hover{
     border: 1px solid #6ac96e;
 
+}
+
+.add-to-cart-button:hover {
+    background-color: var(--highlight);
+}
+
+.add-to-cart-button:active {
+    background-color: var(--grey);
 }
 
 .delete-cart-button:hover{
