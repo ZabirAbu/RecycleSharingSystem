@@ -38,7 +38,7 @@ function Header() {
             </div>
             <div className='nav'>
                 <a className='nav-btn' href='/home'>
-                <img src="https://img.icons8.com/fluency-systems-filled/48/ffffff/home.png" alt="home"/> 
+                <img src={homeIcon} /> 
                 </a>
                 <a className='nav-btn' href='/market'>
                     <img src={marketIcon} />
