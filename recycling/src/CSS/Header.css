@@ -45,12 +45,12 @@
     font-weight: 600 ;
     background-color: var(--secondary-color);
     transition: background-color 0.4s ease, border 0.4s ease;
-    border: 1px solid var(--green-light);
+    border: 1px solid var(--highlight);
 }
 
 .nav-btn:hover{
     background-color: var(--highlight);
-    border: 1px solid var(--highlight);
+    border: 1px solid var(--green-light);
 }
 
 .nav-btn img{

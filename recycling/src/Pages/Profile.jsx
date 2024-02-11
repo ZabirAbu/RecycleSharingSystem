@@ -28,6 +28,11 @@ const Profile = () => {
         toast.success("Point added!", { duration: 3000, icon: "🎯" })
     };
 
+    const shareProfile = () => {
+        navigator.clipboard.writeText("http://swapstuff.tech/profile?user=Team6");
+        toast.success("Copied to clipboard.", { duration: 3000, icon: "📣" })
+    };
+
     const handleLogin = () => {
         localStorage.setItem('username', 'Team6');
         localStorage.setItem('points', 0);
@@ -61,6 +66,8 @@ const Profile = () => {
                                 <p>Points: {points}</p>
                             </div><div>
                                 <button className='profileClipBtn add-point' onClick={addPoint}> Add Point </button>
+                                <button className='profileClipBtn share' onClick={shareProfile}> Share </button>
+
                                 <button className='profileClipBtn logout' onClick={handleLogout}>Logout</button>
                             </div>
                         </div>
