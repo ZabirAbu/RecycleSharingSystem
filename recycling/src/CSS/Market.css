@@ -115,6 +115,7 @@
 
 .search-icon{
     height: 20px;
+    filter: var(--icon-filter);
 }
 
 .main {

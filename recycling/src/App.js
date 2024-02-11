@@ -6,28 +6,18 @@ import Item  from './Pages/Item';
 import Market  from './Pages/Market';
 
 
-function App(props) {
-  import(`./CSS/${props.theme}.css`);
-
+function App() {
   return (
     <Router>
-      <Routes>
-        
-      <Route path="/home" element={<Navigate to="/" />} />
+      <Routes> 
+        <Route path="/home" element={<Navigate to="/" />} />
         <Route path="/" element={<Home />} />
         <Route path="/items" element={<Items />} />
         <Route path="/item" element={<Item />} />
-
-        
         <Route path="/market" element={<Market />} />
-
         {/* <Route path="/*" element={<Navigate to="/" />} /> */}
-
-
-
       </Routes>
     </Router>
-
   );
 }
 
