@@ -12,14 +12,50 @@
     padding-bottom: 3rem;
 }
 
+.itemdetail-image img {
+    border: solid 1px var(--green-light);
+}
+
 .add-to-cart-button {
+    float: left;
+    font-size: 18px;
     padding: 0.5rem;
+    margin: 2rem;
     border-radius: 20px;
+    background-color: var(--primary-color);
     border-color: var(--green-light);
 }
 
+.add-to-cart-button:hover {
+    background-color: var(--highlight);
+}
+
+.add-to-cart-button:active {
+    background-color: var(--grey);
+}
+
 .delete-cart-button {
+    float: right;
+    font-size: 18px;
     padding: 0.5rem;
+    margin: 2rem;
     border-radius: 20px;
-    border-color: var(--green-light);
+    background-color: var(--primary-color);
+    border-color: var(--green-dark);
+}
+
+.delete-cart-button:hover {
+    background-color: var(--highlight);
+}
+
+.delete-cart-button:active {
+    background-color: var(--grey);
+}
+
+.itemdetail-points {
+    font-size: 18px;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    padding-bottom: 1rem;
 }
