@@ -1,5 +1,4 @@
 import '../CSS/Home.css';
-import FrontCover from '../Assets/front-cover.png'
 
 import Header from '../Components/Header';
 
@@ -21,8 +20,7 @@ function Home() {
           </div>
         </div>
         <div className='background'></div>
-
-
+        <div className='boxes-decor'></div>
     </div>
 
   );
