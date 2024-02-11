@@ -80,7 +80,7 @@ function Item() {
                         <div className='itmd-desc'>
                             <h1>Points</h1>
                             <div className='itemdetail-content'>
-                                {item.points} <img src={pointsIcon} />
+                                {points} <img src={pointsIcon} />
                             </div>
                         </div>
                         <div className='itmd-btns'>
@@ -90,7 +90,7 @@ function Item() {
                     </div>
                 </div>
             </div>
-            <div><Toaster position='bottom-left' reverseOrder={true} /></div>
+            {/* <div><Toaster position='bottom-left' reverseOrder={true} /></div> */}
         </div>
     );
 }

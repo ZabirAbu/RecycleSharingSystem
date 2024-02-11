@@ -1,13 +1,13 @@
 .Item {
-    display: flex;
-    justify-content: flex-start;
-    /* align-items: center; */
-    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+    margin-top: 3rem;
 }
 
 .itemdetail-image img{
     width: 300px;
-    padding: 30px;;
+    padding: 30px;
 }
 
 .itemdetail-info {
