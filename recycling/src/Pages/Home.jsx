@@ -20,7 +20,8 @@ function Home() {
           </div>
         </div>
         <div className='background'></div>
-        <div className='boxes-decor'></div>
+        <div className='boxes-decor-left'></div>
+        <div className='boxes-decor-right'></div>
     </div>
 
   );
