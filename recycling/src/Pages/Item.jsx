@@ -32,7 +32,7 @@ function Item() {
             console.log(itemId)
             setCart([...cart, itemId]);
             localStorage.setItem('cart', JSON.stringify([...cart, itemId]));
-            // window.location.reload();
+            window.location.reload();
         } else {
             toast.error("Already in cart.", { duration: 3000 })
         }
@@ -42,7 +42,7 @@ function Item() {
         const updatedCart = cart.filter(itemId => itemId !== idToRemove);
         setCart(updatedCart)
         localStorage.setItem('cart', JSON.stringify(updatedCart));
-        toast.error("Item removed from cart.", { duration: 3000 });
+        window.location.reload();
         // Optionally, you can trigger a re-render or update the UI here
     };
     
