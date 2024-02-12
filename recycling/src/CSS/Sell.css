@@ -4,14 +4,23 @@
     align-items: center;
 }
 
+.list-page {
+    height: calc(100vh - var(--header-height));
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+}
+
 .sell-page{
-    margin: auto;
-    /* width: 100%; */
+    width: 50%;
+    border: 1px solid var(--highlight);
     text-align: left;
     background: var(--primary-color);
-    padding: 0 20px 20px 20px;
+    padding: 20px;
     box-sizing: border-box;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.136);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.136);
     border-radius: 10px;
 }
 
@@ -23,7 +32,7 @@
     margin: 10px 0 !important;
     border-bottom: 1px solid var(--highlight);
 
-    font-size: 24px;
+    font-size: 18px;
 }
 
 .list-details {
@@ -47,6 +56,11 @@
     width: 100%;
     border-radius: 5px;
     font-size: 12px;
+    transition: border 0.4s ease;
+}
+
+.list-input:hover, .list-input:active, .list-input:focus{
+    border: 1px solid var(--green-light);
 }
 
 .list-input::placeholder{
@@ -56,15 +70,62 @@
 .list-btn {
     cursor: pointer;
     margin: auto;
-    padding: 2px 55px;
+    width: 40%;
+    padding: 2px 5px;
     box-sizing: border-box;
     outline: none;
     border: 1px solid var(--highlight);
-    transition: border 0.4s ease;
+    transition: border 0.4s ease, width 0.4s ease;
     border-radius: 5px;
     font-family: 'Inter', sans-serif;
 }
 
 .list-btn:hover{
     border: 1px solid var(--green-light);
+    width: 50%;
+}
+
+.waiting-list{
+    display: flex;
+    flex-direction: column;
+    gap:10px
+}
+
+
+.waiting-box{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    border: 1px solid var(--highlight);
+}
+
+.waiting-box div{
+    padding: 4px 8px;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+.waiting-box div:nth-child(1){
+    border-right: 1px solid var(--highlight);
+}
+
+.waiting-box div:nth-child(2){
+    border-right: 1px solid var(--highlight);
+}
+
+.waiting-box div:nth-child(3){
+    text-align: left;
+    width: 100%;
+
+}
+
+.waiting-box div:nth-child(4){
+    border-left: 1px solid var(--highlight);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wbx-img{
+    width: 15px;
 }

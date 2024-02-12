@@ -60,12 +60,13 @@ const Profile = () => {
                     <div className='profile-space'>
 
                         <div className='profile-clip'>
-                            <img src='https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg' />
+                            <img className="profile-image" src='https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg' />
                             <div>
                                 <text>Welcome, {localStorage.getItem('username')}!</text>
                                 <p>Points: {points}</p>
                             </div><div>
                                 <button className='profileClipBtn add-point' onClick={addPoint}> Add Point </button>
+                                <button className='profileClipBtn share' onClick={() => { window.location.href = `/list`; }}> List/Listings </button>
                                 <button className='profileClipBtn share' onClick={shareProfile}> Share </button>
 
                                 <button className='profileClipBtn logout' onClick={handleLogout}>Logout</button>
@@ -136,20 +137,20 @@ const Profile = () => {
                                     <div className='purchase-item'>
                                         <div className='pie-cont'>
                                             <div className='pie-img'>
-                                            <img src={pointIcon} /> 1,201
+                                                <img src={pointIcon} /> 1,201
                                             </div>
                                             <div className='pie-title'>
                                                 John Smith
                                             </div>
                                         </div>
                                         <div className='pie-date'>
-                                        🏆
+                                            🏆
                                         </div>
                                     </div>
                                     <div className='purchase-item'>
                                         <div className='pie-cont'>
                                             <div className='pie-img'>
-                                            <img src={pointIcon} /> 1,190
+                                                <img src={pointIcon} /> 1,190
                                             </div>
                                             <div className='pie-title'>
                                                 Jane Doe
@@ -169,7 +170,7 @@ const Profile = () => {
                                             </div>
                                         </div>
                                         <div className='pie-date'>
-                                        🥈
+                                            🥈
                                         </div>
                                     </div>
                                     <div className='purchase-item'>
@@ -182,7 +183,7 @@ const Profile = () => {
                                             </div>
                                         </div>
                                         <div className='pie-date'>
-                                        🥉
+                                            🥉
                                         </div>
                                     </div>
 
