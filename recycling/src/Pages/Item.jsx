@@ -32,17 +32,21 @@ function Item() {
             console.log(itemId)
             setCart([...cart, itemId]);
             localStorage.setItem('cart', JSON.stringify([...cart, itemId]));
-            window.location.reload();
+            // window.location.reload();
         } else {
             toast.error("Already in cart.", { duration: 3000 })
         }
     };
-
-    const deleteCart = () => {
-        localStorage.removeItem('cart');
-        toast.error("Cart deleted.", { duration: 3000 })
-        window.location.reload();
+    const removeFromCart = (idToRemove) => {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const updatedCart = cart.filter(itemId => itemId !== idToRemove);
+        setCart(updatedCart)
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
+        toast.error("Item removed from cart.", { duration: 3000 });
+        // Optionally, you can trigger a re-render or update the UI here
     };
+    
+    
 
     useEffect(() => {
         const storedCart = localStorage.getItem('cart');
@@ -79,7 +83,7 @@ function Item() {
                         </div>
                         <div className='itmd-btns'>
                             <button onClick={addToCart} className="add-to-cart-button">Add to Cart</button>
-                            <button onClick={deleteCart} className="delete-cart-button">Delete Cart</button>
+                            <button onClick={() => removeFromCart(id.toString())} className="delete-cart-button">Delete Cart</button>
                         </div>
                     </div>
                 </div>

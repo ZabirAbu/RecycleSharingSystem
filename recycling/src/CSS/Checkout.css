@@ -2,7 +2,7 @@
     width: 100%;
     height: calc(100vh - var(--header-height));
     text-align: center;
-    margin: 0 auto; /* This centers the container horizontally */
+    margin: 0 auto;
     max-width: 600px;
 }
 
@@ -14,8 +14,8 @@
     padding: 10px;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: 1fr; /* Three divs per line */
-    grid-auto-rows: minmax(80px, auto); /* Auto-sized rows */
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(80px, auto); 
     gap: 10px;
     overflow: auto;
 }

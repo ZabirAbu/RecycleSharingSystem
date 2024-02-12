@@ -4,44 +4,35 @@ import marketIcon from '../Assets/market.png';
 import loginIcon from '../Assets/person.png';
 import logo from '../Assets/icon.png'
 import cart from '../Assets/cart.png'
-
-
-import FormControl from '@mui/material/FormControl';
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
 import { useEffect, useState } from 'react';
 
 function Header() {
-    const [theme, setTheme] = useState('darkmode');
-    const [cartLength, setCartLength] = useState(); // State to manage cart items
+    const [cartCount, setCartCount] = useState(0);
 
-   
+    useEffect(() => {
+        const cart = JSON.parse(localStorage.getItem('cart'));
+        if (cart) {
+            setCartCount(cart.length);
+        }
+    }, []);
 
-    const handleChange = (event) => {
-        setTheme(event.target.value);
-        const root = document.querySelector(":root");
-    
-        if (event.target.value === "darkmode"){
-            root.style.setProperty("--primary-color", "#1c1d22");
-            root.style.setProperty("--secondary-color", "#1c1d22");
-            root.style.setProperty("--highlight", "#2c2d30");
-            root.style.setProperty("--white", "#fefefe");
-            root.style.setProperty("--icon-filter", "invert(1)");
+    // Function to update the cart count when an item is added or removed
+    const updateCartCount = () => {
+        const cart = JSON.parse(localStorage.getItem('cart'));
+        if (cart) {
+            setCartCount(cart.length);
         } else {
-            root.style.setProperty("--primary-color", "#f5fff5");
-            root.style.setProperty("--secondary-color", "#cccccc");
-            root.style.setProperty("--highlight", "#edeae7");
-            root.style.setProperty("--white", "#010101");
-            root.style.setProperty("--icon-filter", "invert(0)");
+            setCartCount(0);
         }
     };
 
+    // Subscribe to changes in local storage to update the cart count
     useEffect(() => {
-        const storedCart = localStorage.getItem('cart');
-        if (storedCart) {
-            console.log(JSON.parse(storedCart))
-            setCartLength(JSON.parse(storedCart).length);
-        }
+        updateCartCount(); // Initial fetch
+        window.addEventListener('storage', updateCartCount); // Listen for storage changes
+        return () => {
+            window.removeEventListener('storage', updateCartCount); // Clean up event listener
+        };
     }, []);
 
     
@@ -61,7 +52,7 @@ function Header() {
                     <img src={loginIcon} />
                 </a>
                 <a className='nav-btn' href='/checkout'>
-                    <img src={cart} /> {cartLength}
+                    <img src={cart} /> {cartCount}
                 </a>
             </div>
 

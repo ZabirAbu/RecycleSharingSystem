@@ -79,7 +79,7 @@ const Profile = () => {
                                     <div className='purchase-item'>
                                         <div className='pie-cont'>
                                             <div className='pie-img'>
-                                                <img src={pointIcon} />
+                                                14 <img src={pointIcon} />
                                             </div>
                                             <div className='pie-title'>
                                                 Purchased: Vintage Clothing
@@ -92,7 +92,7 @@ const Profile = () => {
                                     <div className='purchase-item'>
                                         <div className='pie-cont'>
                                             <div className='pie-img'>
-                                                <img src={pointIcon} />
+                                                21 <img src={pointIcon} />
                                             </div>
                                             <div className='pie-title'>
                                                 Purchased: Cooking Pan
@@ -105,7 +105,7 @@ const Profile = () => {
                                     <div className='purchase-item'>
                                         <div className='pie-cont'>
                                             <div className='pie-img'>
-                                                <img src={pointIcon} />
+                                                7 <img src={pointIcon} />
                                             </div>
                                             <div className='pie-title'>
                                                 Purchased: Bracelets
@@ -118,7 +118,7 @@ const Profile = () => {
                                     <div className='purchase-item'>
                                         <div className='pie-cont'>
                                             <div className='pie-img'>
-                                                <img src={pointIcon} />
+                                                10 <img src={pointIcon} />
                                             </div>
                                             <div className='pie-title'>
                                                 Purchased: Album Covers
@@ -137,7 +137,7 @@ const Profile = () => {
                                     <div className='purchase-item'>
                                         <div className='pie-cont'>
                                             <div className='pie-img'>
-                                                <img src={pointIcon} /> 1,201
+                                                 1,201<img src={pointIcon} />
                                             </div>
                                             <div className='pie-title'>
                                                 John Smith
@@ -150,7 +150,7 @@ const Profile = () => {
                                     <div className='purchase-item'>
                                         <div className='pie-cont'>
                                             <div className='pie-img'>
-                                                <img src={pointIcon} /> 1,190
+                                                 1,190<img src={pointIcon} />
                                             </div>
                                             <div className='pie-title'>
                                                 Jane Doe
@@ -163,7 +163,7 @@ const Profile = () => {
                                     <div className='purchase-item'>
                                         <div className='pie-cont'>
                                             <div className='pie-img'>
-                                                <img src={pointIcon} /> 1,102
+                                                1,102<img src={pointIcon} /> 
                                             </div>
                                             <div className='pie-title'>
                                                 Elen Joy
@@ -176,7 +176,7 @@ const Profile = () => {
                                     <div className='purchase-item'>
                                         <div className='pie-cont'>
                                             <div className='pie-img'>
-                                                <img src={pointIcon} /> 1,009
+                                                 1,009<img src={pointIcon} />
                                             </div>
                                             <div className='pie-title'>
                                                 Sam Jackson
