@@ -88,10 +88,14 @@
 }
 
 .total-points {
-  font-size: 18px;
+  font-size: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 5px 15px;
+  box-sizing: border-box;
+  border: 1px solid var(--highlight);
+  border-radius: 10px;
 }
 
 .total-points img{
@@ -127,4 +131,34 @@
 
 .clear-cart:hover{
   border: 1px solid #c96a6a;
+}
+
+
+.user-points-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.code-box h3{
+  margin: 10px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.code-box text {
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #243130;
+  color: #6ccf70;
+  padding: 3px 6px;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+.code-box h5{
+  margin: 10px;
+  font-size: 14px;
+  font-weight: 400;
 }

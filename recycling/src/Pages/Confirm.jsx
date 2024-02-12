@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import '../CSS/Checkout.css';
 import '../CSS/Home.css';
 import Header from '../Components/Header';
@@ -7,7 +7,7 @@ import pointIcon from '../Assets/point.png';
 import toast, { Toaster } from 'react-hot-toast';
 
 
-function Checkout() {
+function Confirm() {
     const data = [
         { id: 1, points: 36, tag: "study", title: 'Computer Science Books', content: "I am listing my old school books as I am graduating this year. ", image: "https://macmillan-dam.captureweb.co.uk/cdn/macmillan/previews/439664/d2600cec4c0f09bf8e6187a83a066343/0/14665546cf5662d409143d004ffc0c54/131898933.jpg" },
         { id: 2, points: 14, tag: "clothing", title: 'Vintage Clothing', content: "I don't have enough room to move these clothes to my new room next year.", image: "https://www.thoughtco.com/thmb/ctxxtfGGeK5f_-S3f8J-jbY-Gp8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/close-up-of-clothes-hanging-in-row-739240657-5a78b11f8e1b6e003715c0ec.jpg" },
@@ -28,48 +28,42 @@ function Checkout() {
 
     const getUserPoints = () => {
         try {
-            return localStorage.getItem("points");
+            return localStorage.getItem("points") - calculateTotalPoints();
         } catch {
             return false
         }
     }
 
-    function generateRandomString(length) {
-        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        let randomString = '';
-        for (let i = 0; i < length; i++) {
-            const randomIndex = Math.floor(Math.random() * characters.length);
-            randomString += characters.charAt(randomIndex);
-        }
-        return randomString;
-    }
-    
-
     const handleConfirm = () => {
         if (calculateTotalPoints() > getUserPoints()) {
             toast.error("You don't have enough points to swap.", {duration: 5000})
         } else {
-            window.location.href = `/confirm?code=${generateRandomString(8)}`
+            window.location.href = `/confirm?`
         }
     };
 
-
-
     const clearCart = () => {
         localStorage.removeItem('cart');
-        window.location.reload();
         cartItems = [];
     };
+
+    const searchParams = new URLSearchParams(window.location.search);
+    const code = searchParams.get('code');
+
+
+    useEffect(() => {
+        // clearCart()
+      }, []);
 
     return (
         <div>
             <Header />
             <div className='Checkout'>
-                <h2>Checkout</h2>
+                <h2>Confirmed Order</h2>
 
                 {cartItems.length > 0 ? (
                     <div className="cart-items">
-                        <h3>Items in Cart:</h3>
+                        <h3>Items Bought:</h3>
                         {cartItems.map(item => (
                             <BasketItem
                                 key={item.id} // Make sure to include a unique key for each item
@@ -82,16 +76,20 @@ function Checkout() {
                         ))}
                         <div className='user-points-box'>
                             <span className='total-points'>
-                                Cart Total:  {calculateTotalPoints()}<img src={pointIcon} />
+                                Spent:  {calculateTotalPoints()}<img src={pointIcon} />
                             </span>
                             <span className='total-points'>
                                 Available:  {getUserPoints()}<img src={pointIcon} />
                             </span>
                         </div>
-                        <form>
-                            <button type="button" onClick={handleConfirm} className="cart-confirm">Confirm</button>
-                            <button type="button" onClick={clearCart} className="cart-confirm clear-cart">Clear Cart</button>
-                        </form>
+                        <hr />
+                        <div className='code-box'>
+
+                            <h3>Here is your code: </h3>
+                            <text>{code}</text>
+                            <h5>Show this to a supervisor at your local SwapPoint to receive your item/s.</h5>
+                        </div>
+                        
                     </div>
                 ) : (
                     <div className="empty-cart">
@@ -106,4 +104,4 @@ function Checkout() {
     );
 }
 
-export default Checkout;
+export default Confirm;
