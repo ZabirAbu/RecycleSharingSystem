@@ -34,16 +34,9 @@ function Confirm() {
         }
     }
 
-    const handleConfirm = () => {
-        if (calculateTotalPoints() > getUserPoints()) {
-            toast.error("You don't have enough points to swap.", {duration: 5000})
-        } else {
-            window.location.href = `/confirm?`
-        }
-    };
-
     const clearCart = () => {
         localStorage.removeItem('cart');
+        localStorage.setItem("points", getUserPoints())
         cartItems = [];
     };
 
@@ -52,7 +45,7 @@ function Confirm() {
 
 
     useEffect(() => {
-        // clearCart()
+        clearCart()
       }, []);
 
     return (
