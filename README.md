@@ -1,4 +1,4 @@
-# RecycleSharingSystem
+# SwapStuff
 
 ## View our website here:
 https://swapstuff.tech
