@@ -22,7 +22,7 @@ const Profile = () => {
     }, []);
 
     const addPoint = () => {
-        const updatedPoints = points + 1; // Increment points
+        const updatedPoints = points + 20; // Increment points
         setPoints(updatedPoints);
         localStorage.setItem('points', updatedPoints); // Update points in localStorage
         toast.success("Point added.", { duration: 3000})
